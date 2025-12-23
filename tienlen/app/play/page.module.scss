@@ -10,5 +10,14 @@
         margin-bottom: 50px;
         border-radius: 20px;
         text-transform: uppercase;
+
+
+        @media screen and (max-width: 1100px) {
+            transform: scale(0.6);
+        }
+
+        @media screen and (max-width: 600px) {
+            transform: scale(0.3);
+        }
     }
 }
