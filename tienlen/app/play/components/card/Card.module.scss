@@ -1,0 +1,84 @@
+.card {
+    width: 60px;
+    height: 90px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 0 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    user-select: none;
+    margin-left: -30px;
+    z-index: 1;
+    transition: 300ms ease;
+    font-weight: normal;
+    transform: translateX(15px);
+
+    animation: cardMount 0.3s ease-out;
+
+    @keyframes cardMount {
+        from {
+            transform: translateX(15px) scale(1.2);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(15px) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .top {
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+    }
+    .center {
+        font-size: 1.5rem;
+    }
+    .bottom {
+        align-self: flex-end;
+        transform: rotate(180deg);
+        display: flex;
+        flex-direction: column;
+    }
+
+    span {
+        line-height: 0.9;
+    }
+}
+
+.cardBack {
+    @extend .card;
+    background-color: crimson;
+    transform: translateX(22.5px);
+    margin-left: -45px;
+}
+
+.red {
+    color: red;
+}
+
+.black {
+    color: black;
+}
+
+.playing {
+    cursor: pointer;
+
+    &:hover {
+        transform: translateX(15px) translateY(-5px);
+        filter: brightness(0.95);
+    }
+}
+
+.selected {
+    transform: translateX(15px) translateY(-25px);
+
+    &:hover {
+        transform: translateX(15px) translateY(-25px);
+    }
+}
